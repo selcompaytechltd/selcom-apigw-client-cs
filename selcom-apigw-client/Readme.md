@@ -1,15 +1,17 @@
  
 # SELCOM API CLIENT
+<p align='center'>
+<img src="https://img.shields.io/badge/C%23-asp.net-blue">
+<img src="https://img.shields.io/badge/net%20-v6.0-blue">
 
-![alt text](https://img.shields.io/badge/C%23-asp.net-blue)
-![alt text](https://img.shields.io/badge/net%20-v6.0-blue)
+</p >
 
 ## Homepage
 https://developers.selcommobile.com/
 
 ## Description
 This is a library containing functions that aid in the accessing of selcom api. IT is made up pf 4 functions.
-computeHeader 
+
 
 ## Installation 
 dotnet add package  selcom-apigw-client
@@ -27,28 +29,27 @@ apigwClient client = new apigwClient(baseUrl, apiKey, apiSecret);
 // computeHeader a dictionary containing data to bes submitted
 // computeHeader returns an array with values for the following header fields: 
 // Authorization, Timestamp, Digest, Signed-Fields
-client.computeHeader( jsonData):
+client.computeHeader( dictData):
 
 // postFuct takes relative path to base url. dictionary containing data to be submitted 
 // It performs a POST request of the submitted data to the destniation url generatingg the header internally
 // IT returns a String containing the response data to the request
-client.postFunc(path, jsonData)
+client.postFunc(path, dictData)
 
 // getFuct takestakes relative path to base url. dictionary containing data to be submitted  
 // It performs a GET request adding the query to the  url and generatingg the header internally
 // IT returns a Stringcontaining the response data to the request
-client.getFunc(path, jsonData)
+client.getFunc(path, dictData)
 
 // deletetFuct takes relative path to base url.dictionary containing data to be submitted 
 // It performs a DELETE request adding the query to the  url and generatingg the header internally
 // IT returns a String containing the response data to the request
-client.deleteFunc(path, jsonData)
+client.deleteFunc(path, dictData)
 ```
 ### Examples
-```js
+```cs
 //import package
 using selcom_apgw_client;
-// initalize a new apiAccess instace with values of the base url, api key and api secret
 
 String apiKey = '202cb962ac59075b964b07152d234b70';
 String apiSecret = '81dc9bdb52d04dc20036dbd8313ed055';
@@ -56,7 +57,7 @@ String baseUrl = "http://example.com";
 
 
 
-// initalize a new apiAccess instace with values of the base url, api key and api secret
+// initalize a new Client instace with values of the base url, api key and api secret
 var client = new apigwClient(baseUrl, apiKey, apiSecret);
 
 //order data
@@ -77,6 +78,7 @@ orderDict.Add("no_of_items",  1);
 String orderPath = "/v1/checkout/create-order-minimal";
 //crate new order
 
-var orderRespose = client.postFunc(orderPath, orderArray);
+var orderRespose = client.postFunc(orderPath, orderDict);
+//print response
 Console.Write(orderResponse);
 ```
