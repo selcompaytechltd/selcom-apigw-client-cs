@@ -1,12 +1,9 @@
  
-<h1 align="center">SELCOM API CLIENT</h1>
+# SELCOM API CLIENT
 
-<p align='center'>
+![alt text](https://img.shields.io/badge/C%23-asp.net-blue)
+![alt text](https://img.shields.io/badge/net%20-v6.0-blue)
 
-<img src="https://img.shields.io/badge/net%20-v6.0-blue">
-
-<img src="https://img.shields.io/badge/C%23-asp.net-blue">
-</p >
 ## Homepage
 https://developers.selcommobile.com/
 
@@ -69,7 +66,7 @@ orderDict.Add("order_id","1218d5Qb");
 orderDict.Add("buyer_email", "john@example.com");
 orderDict.Add("buyer_name", "John Joh");
 orderDict.Add("buyer_phone","255682555555");
-orderDict.Add("amount",  8000,);
+orderDict.Add("amount",  8000);
 orderDict.Add("currency","TZS");
 orderDict.Add("buyer_remarks","None");
 orderDict.Add("merchant_remarks","None");
@@ -80,6 +77,6 @@ orderDict.Add("no_of_items",  1);
 String orderPath = "/v1/checkout/create-order-minimal";
 //crate new order
 
-var = orderRespose = client.postFunc(orderPath, orderArray);
+var orderRespose = client.postFunc(orderPath, orderArray);
 Console.Write(orderResponse);
 ```
