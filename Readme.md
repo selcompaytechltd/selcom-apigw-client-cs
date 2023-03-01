@@ -1,5 +1,5 @@
  
-# SELCOM API CLIENT
+# Selcom API Gateway Client - C#
 <p align='center'>
 <img src="https://img.shields.io/badge/C%23-asp.net-blue">
 <img src="https://img.shields.io/badge/net%20-v6.0-blue">
